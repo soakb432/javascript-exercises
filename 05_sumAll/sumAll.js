@@ -3,6 +3,10 @@ const sumAll = function(a, b) {
   let start;
   let end;
 
+  if ((!Number.isInteger(a) || !Number.isInteger(b)) || (a < 0 || b < 0)) {
+    return "ERROR";
+  }
+
   if (a > b) {
     start = b;
     end = a;
