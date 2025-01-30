@@ -1,20 +1,13 @@
 const palindromes = function (word) {
-    word = word.toLowerCase()
+    let cleanWord = word.toLowerCase()
         .split("")
         .filter(char => /[^\W_]/.test(char))
-        .join();
-    
-    let [start, end] = [0, word.length - 1];
+        .join("");
 
-    for (let i = 0; i < word.length; i++) {
-        if (word[start] !== word[end]) {
-            return false;
-        } else {
-            start++;
-            end--;
-        }
-    }
-    return true;
+    let reversedWord = cleanWord.split("").reverse().join("");
+
+    return cleanWord === reversedWord;
+
 };
 
 // Do not edit below this line
