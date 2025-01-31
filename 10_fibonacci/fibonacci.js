@@ -1,12 +1,18 @@
 const fibonacci = function(n) {
-    if (n < 0) {
-        return "OOPS";
-    } else if (n == 0) {
-        return 0;
-    } else if (n == 1 || n == 2) {
+    let count;
+    if (typeof n !== "number") {
+        count = parseInt(n);
+    } else {
+        count = n;
+    }
+    
+    if (count < 0) return "OOPS";
+    if (count == 0) return 0;
+
+    if (count == 1 || count == 2) {
         return 1;
     } else {
-        return fibonacci(n - 1) + fibonacci(n - 2);
+        return fibonacci(count - 1) + fibonacci(count - 2);
     }
 };
 
