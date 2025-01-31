@@ -1,7 +1,7 @@
 const findTheOldest = function(array) {
     let oldest = array.sort(function(a, b) {
-        if (!a.yearOfDeath) {a.yearOfDeath = new Date().getFullYear()};
-        if (!b.yearOfDeath) {b.yearOfDeath = new Date().getFullYear()};
+        a.yearOfDeath ??= a.yearOfDeath = new Date().getFullYear();
+        b.yearOfDeath ??= b.yearOfDeath = new Date().getFullYear();
 
         let lastPerson = a.yearOfDeath - a.yearOfBirth;
         let nextPerson = b.yearOfDeath - b.yearOfBirth;
