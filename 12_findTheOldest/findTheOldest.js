@@ -1,5 +1,5 @@
 const findTheOldest = function(array) {
-    let oldest = array.sort(function(a, b) {
+    let oldest = array.toSorted(function(a, b) {
         a.yearOfDeath ??= a.yearOfDeath = new Date().getFullYear();
         b.yearOfDeath ??= b.yearOfDeath = new Date().getFullYear();
 
